@@ -1,0 +1,229 @@
+$globalWidth: 1024px;
+$tngBlue: #0563A5;
+
+$padding: 40px;
+$width: $globalWidth - 2 * $padding;
+
+@mixin alignVerticallyWithWidth($val) {
+  position: absolute;
+
+  width: $val;
+  top: 50%;
+
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+}
+
+@mixin helveticaNeueBold {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+@mixin bigFont {
+  @include helveticaNeueBold;
+  font-size: 14.4em;
+  line-height: 1.05em;
+  letter-spacing: -0.07em;
+}
+
+@mixin normalFontSize {
+  font-size: 2.4em;
+  line-height: 1.5em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-weight: lighter;
+  font: 10px/1 "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+ul {
+  list-style: none;
+
+  li {
+    display: inline-block;
+  }
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px black dotted;
+}
+
+.important-info {
+  @include helveticaNeueBold;
+}
+
+a.icon-link {
+  border: none;
+}
+
+#container {
+  width: $globalWidth;
+  margin: 0 auto;
+
+  -moz-box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+#splash {
+  position: relative;
+  height: 72em;
+  padding: 0 $padding;
+
+  background-image: url("rsrc/munich.jpg");
+  background-position: -100px 0;
+  background-repeat: no-repeat;
+
+  //  background-color: red;
+
+  #statement {
+    @include bigFont;
+
+    @include alignVerticallyWithWidth($width);
+
+    //    background-color:yellow;
+  }
+
+  #next-meetup {
+    font-size: 2.8em;
+    line-height: 1.5em;
+    letter-spacing: -0.025em;
+    text-align: right;
+
+    @include alignVerticallyWithWidth($width);
+
+    //    background-color: green;
+  }
+}
+
+#description {
+  padding: 1.5 * $padding $padding; // hm... TODO
+
+  a {
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px gray dotted;
+  }
+
+  a.icon-link {
+    border: none;
+  }
+
+  p {
+    @include normalFontSize;
+
+    margin-bottom: $padding;
+  }
+
+  p.talk-title {
+    font-weight: bold;
+  }
+
+  .title {
+    @include bigFont;
+  }
+
+  p.organisation {
+    margin-bottom: $padding / 2;
+  }
+
+  div.person {
+    font-size: 2em;
+    line-height: 1.5em;
+
+    position: relative;
+    display: inline-block;
+    width: $width / 2 - 40px;
+
+    &:nth-child(odd) {
+      margin-right: 20px;
+    }
+
+    &:nth-child(even) {
+      margin-left: 20px;
+    }
+
+    margin-bottom: 20px;
+
+    //      background-color: bisque;
+
+    a {
+      border: none;
+    }
+
+    img {
+      border-radius: 4px;
+      @include alignVerticallyWithWidth(71px);
+    }
+
+    .person-info {
+      padding-left: 71px + 20px;
+      display: inline-block;
+    }
+  }
+
+  hr {
+    width: 100%;
+    border: none;
+    background-color: #e5e5e5;
+    height: 1px;
+    margin: $padding auto;
+  }
+
+  ul {
+    @include normalFontSize;
+    list-style: circle;
+    padding-bottom: $padding;
+
+    li {
+      display: list-item;
+    }
+  }
+}
+
+#footer {
+  padding: 1.5 * $padding $padding; // hm... TODO
+
+  color: white;
+  text-align: center;
+
+  background-color: $tngBlue;
+
+  a {
+    color: white;
+    text-decoration: none;
+    border: none;
+  }
+
+  font-size: 2em;
+  line-height: 1.5em;
+
+  li {
+    padding: 0 $padding;
+  }
+
+  hr {
+    width: 50%;
+    border: none;
+    background-color: white;
+    height: 1px;
+    margin: $padding auto;
+  }
+
+  #colophon {
+    font-size: 0.7em;
+  }
+}
