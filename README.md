@@ -1,3 +1,3 @@
-The homepage of Design Thinking München Gruppe, <http://dt-muc.de>.
+The homepage of Slack Meetup Munich Group, <https://slack-muc.de/>.
 
 Maintained by [Tae](mailto:taewon.ha@tngtech.com).
